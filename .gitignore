@@ -39,3 +39,20 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Ignore node modules
+node_modules/
+
+# Ignore downloaded video files
+*.mp4
+
+# Ignore ffmpeg binaries and other executables
+*.exe
+
+# Optional but recommended
+.env
+*.log
+
+node_modules/
+*.mp4
+*.exe
