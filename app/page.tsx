@@ -18,11 +18,11 @@ const [downloadingQuality, setDownloadingQuality] = useState<string | null>(null
 
     try {
       setLoading(true);
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/download`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-       body: JSON.stringify({ url: encodeURI(url.trim()) }),
-      });
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/download`,  {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ url }),
+});
 
       const data = await res.json();
       if (data.error) {
@@ -44,11 +44,11 @@ const [downloadingQuality, setDownloadingQuality] = useState<string | null>(null
 
   try {
      setLoading(true);
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/download-video`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ url, format_id: format.format_id }), // ✅ Send format_id to backend
-    });
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/download-video`,  {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ url }),
+});
 
     const blob = await res.blob();
     const fileName = `${videoInfo.title}-${format.quality}.mp4`;
