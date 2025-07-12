@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function Home() {
   const [url, setUrl] = useState('');
@@ -11,7 +11,9 @@ export default function Home() {
 
 const [downloadingQuality, setDownloadingQuality] = useState<string | null>(null);
 
-  
+  useEffect(() => {
+  console.log("✅ API URL:", process.env.NEXT_PUBLIC_API_URL);
+}, []);
 
   const handleFetchInfo = async () => {
     if (!url) return alert("Please enter a YouTube URL.");
