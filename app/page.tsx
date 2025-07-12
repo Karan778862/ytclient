@@ -30,9 +30,10 @@ const [downloadingQuality, setDownloadingQuality] = useState<string | null>(null
       } else {
         setVideoInfo(data);
       }
-    } catch (err) {
-      console.error(err);
-      alert("Something went wrong");
+    } catch (err: any) {
+  console.error("❌ Fetch Info Error:", err?.message || err);
+  alert(err?.message || "Something went wrong");
+
     } finally {
       setLoading(false);
     }
