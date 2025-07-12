@@ -20,7 +20,7 @@ const [downloadingQuality, setDownloadingQuality] = useState<string | null>(null
 
     try {
       setLoading(true);
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/download`,  {
+      const res = await fetch(`https://ytdownload-adv1.onrender.com/api/download`,  {
   method: "POST",
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify({ url }),
@@ -46,7 +46,7 @@ const [downloadingQuality, setDownloadingQuality] = useState<string | null>(null
 
   try {
      setLoading(true);
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/download-video`,  {
+    const res = await fetch(`https://ytdownload-adv1.onrender.com/api/download-video`,  {
   method: "POST",
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify({ url }),
@@ -73,7 +73,7 @@ const [downloadingQuality, setDownloadingQuality] = useState<string | null>(null
  const handleAudioDownload = async (format = 'mp3') => {
   try {
     setmusicl(true);
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/download-audio`, {
+    const res = await fetch(`https://ytdownload-adv1.onrender.com/api/download-audio`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -106,7 +106,7 @@ const [downloadingQuality, setDownloadingQuality] = useState<string | null>(null
   const handleThumbnailDownload = async () => {
   try {
     setThumbnail(true);
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/download-thumbnail-file`, {
+    const response = await fetch(`https://ytdownload-adv1.onrender.com/api/download-thumbnail-file`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
